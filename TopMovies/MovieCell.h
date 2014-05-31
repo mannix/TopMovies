@@ -10,6 +10,7 @@
 
 @interface MovieCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *rank;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 
 @end

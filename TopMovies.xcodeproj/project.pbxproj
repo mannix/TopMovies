@@ -12,6 +12,8 @@
 		B7F4F420193960C600BCD315 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41F193960C600BCD315 /* Movie.m */; };
 		B7F4F4231939631800BCD315 /* MovieImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F4221939631800BCD315 /* MovieImage.m */; };
 		B7F4F42719396A4000BCD315 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F42619396A4000BCD315 /* MovieCell.m */; };
+		B7F4F42B1939742700BCD315 /* MovieListTabletFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F42A1939742700BCD315 /* MovieListTabletFlowLayout.m */; };
+		B7F4F42E1939743900BCD315 /* MovieListPhoneFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F42D1939743900BCD315 /* MovieListPhoneFlowLayout.m */; };
 		B7F9D8D4193946510036822C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F9D8D3193946510036822C /* Foundation.framework */; };
 		B7F9D8D6193946510036822C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F9D8D5193946510036822C /* CoreGraphics.framework */; };
 		B7F9D8D8193946510036822C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F9D8D7193946510036822C /* UIKit.framework */; };
@@ -51,6 +53,10 @@
 		B7F4F4221939631800BCD315 /* MovieImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieImage.m; sourceTree = "<group>"; };
 		B7F4F42519396A4000BCD315 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		B7F4F42619396A4000BCD315 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		B7F4F4291939742700BCD315 /* MovieListTabletFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListTabletFlowLayout.h; sourceTree = "<group>"; };
+		B7F4F42A1939742700BCD315 /* MovieListTabletFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListTabletFlowLayout.m; sourceTree = "<group>"; };
+		B7F4F42C1939743900BCD315 /* MovieListPhoneFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListPhoneFlowLayout.h; sourceTree = "<group>"; };
+		B7F4F42D1939743900BCD315 /* MovieListPhoneFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListPhoneFlowLayout.m; sourceTree = "<group>"; };
 		B7F9D8D0193946510036822C /* TopMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F9D8D3193946510036822C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7F9D8D5193946510036822C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +139,19 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		B7F4F428193973DE00BCD315 /* Movie List */ = {
+			isa = PBXGroup;
+			children = (
+				B7F9D953193951080036822C /* MovieListViewController.h */,
+				B7F9D954193951080036822C /* MovieListViewController.m */,
+				B7F4F4291939742700BCD315 /* MovieListTabletFlowLayout.h */,
+				B7F4F42A1939742700BCD315 /* MovieListTabletFlowLayout.m */,
+				B7F4F42C1939743900BCD315 /* MovieListPhoneFlowLayout.h */,
+				B7F4F42D1939743900BCD315 /* MovieListPhoneFlowLayout.m */,
+			);
+			name = "Movie List";
+			sourceTree = "<group>";
+		};
 		B7F9D8C7193946510036822C = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +192,7 @@
 				B7F9D8E5193946510036822C /* MMAppDelegate.m */,
 				B7F9D94C19394EFB0036822C /* Main_iPad.storyboard */,
 				B7F9D94E19394F0C0036822C /* Main_iPhone.storyboard */,
-				B7F9D953193951080036822C /* MovieListViewController.h */,
-				B7F9D954193951080036822C /* MovieListViewController.m */,
+				B7F4F428193973DE00BCD315 /* Movie List */,
 				B7F4F41D193960B000BCD315 /* Models */,
 				B7F4F42419396A1B00BCD315 /* Views */,
 				B7F4F4191939540C00BCD315 /* IMDB */,
@@ -348,12 +366,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7F4F420193960C600BCD315 /* Movie.m in Sources */,
+				B7F4F42E1939743900BCD315 /* MovieListPhoneFlowLayout.m in Sources */,
 				B7F9D8E6193946510036822C /* MMAppDelegate.m in Sources */,
 				B7F4F4231939631800BCD315 /* MovieImage.m in Sources */,
 				B7F9D8E9193946510036822C /* TopMovies.xcdatamodeld in Sources */,
 				B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */,
 				B7F9D8E2193946510036822C /* main.m in Sources */,
 				B7F4F42719396A4000BCD315 /* MovieCell.m in Sources */,
+				B7F4F42B1939742700BCD315 /* MovieListTabletFlowLayout.m in Sources */,
 				B7F9D955193951080036822C /* MovieListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
