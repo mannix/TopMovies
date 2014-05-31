@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B21FE337DB5446AB0B8696D /* libPods-TopMovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D84448DC664644B8870953 /* libPods-TopMovies.a */; };
-		B7F02DAB193A014600E722E6 /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F02DAA193A014600E722E6 /* UIImage+Helpers.m */; };
 		B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41B1939584900BCD315 /* ImdbApiClient.m */; };
 		B7F4F420193960C600BCD315 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41F193960C600BCD315 /* Movie.m */; };
 		B7F4F4231939631800BCD315 /* MovieImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F4221939631800BCD315 /* MovieImage.m */; };
@@ -46,8 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B7F02DA9193A014600E722E6 /* UIImage+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helpers.h"; sourceTree = "<group>"; };
-		B7F02DAA193A014600E722E6 /* UIImage+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helpers.m"; sourceTree = "<group>"; };
 		B7F4F41A1939584900BCD315 /* ImdbApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImdbApiClient.h; sourceTree = "<group>"; };
 		B7F4F41B1939584900BCD315 /* ImdbApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImdbApiClient.m; sourceTree = "<group>"; };
 		B7F4F41E193960C600BCD315 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
@@ -116,8 +113,6 @@
 		B7F02DA8193A00CD00E722E6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B7F02DA9193A014600E722E6 /* UIImage+Helpers.h */,
-				B7F02DAA193A014600E722E6 /* UIImage+Helpers.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -380,7 +375,6 @@
 			files = (
 				B7F4F420193960C600BCD315 /* Movie.m in Sources */,
 				B7F4F42E1939743900BCD315 /* MovieListPhoneFlowLayout.m in Sources */,
-				B7F02DAB193A014600E722E6 /* UIImage+Helpers.m in Sources */,
 				B7F9D8E6193946510036822C /* MMAppDelegate.m in Sources */,
 				B7F4F4231939631800BCD315 /* MovieImage.m in Sources */,
 				B7F9D8E9193946510036822C /* TopMovies.xcdatamodeld in Sources */,

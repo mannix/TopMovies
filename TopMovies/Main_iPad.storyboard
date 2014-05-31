@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="cST-te-hds">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="kDs-BK-nuc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Movie List View Controller-->
+        <!--Movie List View Controller - Top 250 Movies on the IMDb Charts-->
         <scene sceneID="a7k-Dd-I8J">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="cST-te-hds" customClass="MovieListViewController" sceneMemberID="viewController">
@@ -13,41 +13,94 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fDO-fJ-Pvp">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="itemSize" width="157" height="380"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="uyL-HW-fcB" customClass="MovieCell">
-                                <rect key="frame" x="0.0" y="50" width="350" height="500"/>
+                                <rect key="frame" x="0.0" y="64" width="157" height="380"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="157" height="380"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#250" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-vb-7xe">
-                                            <rect key="frame" x="20" y="20" width="42" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb Rank: 250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-vb-7xe">
+                                            <rect key="frame" x="21" y="10" width="115" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="LWK-nL-jSM"/>
+                                                <constraint firstAttribute="width" constant="115" id="j4z-Wx-OAe"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="195" translatesAutoresizingMaskIntoConstraints="NO" id="gd2-Ad-jQc">
-                                            <rect key="frame" x="135" y="49" width="195" height="24"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sDV-pZ-snT">
+                                            <rect key="frame" x="21" y="41" width="115" height="170"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="115" id="b4H-Uk-IVn"/>
+                                                <constraint firstAttribute="height" constant="170" id="jag-Za-IVB"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="115" translatesAutoresizingMaskIntoConstraints="NO" id="gd2-Ad-jQc">
+                                            <rect key="frame" x="21" y="221" width="115" height="63"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="115" id="wyL-qZ-sYr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDV-pZ-snT">
-                                            <rect key="frame" x="20" y="49" width="107" height="159"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-0Y-XAI">
+                                            <rect key="frame" x="20" y="292" width="118" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Gop-Jl-E4E"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="Mv4-QO-dcN"/>
+                                                <constraint firstAttribute="height" constant="30" id="lK6-ym-jNd"/>
+                                                <constraint firstAttribute="width" constant="118" id="meB-4k-prH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="View More">
+                                                <color key="titleColor" red="0.64705882349999999" green="0.52156862749999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dot-FF-WDZ">
+                                            <rect key="frame" x="31" y="330" width="95" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="4Cx-69-o3h"/>
+                                                <constraint firstAttribute="width" constant="95" id="8Cw-U9-MIv"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="S4J-OG-cWL"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="aNG-NL-7Le"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Buy / Rent">
+                                                <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="customSize" width="350" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="Dot-FF-WDZ" secondAttribute="centerX" id="7zc-Le-drf"/>
+                                    <constraint firstAttribute="centerX" secondItem="sDV-pZ-snT" secondAttribute="centerX" id="EsI-KF-2YG"/>
+                                    <constraint firstAttribute="centerX" secondItem="gd2-Ad-jQc" secondAttribute="centerX" id="GLg-dM-6c9"/>
+                                    <constraint firstItem="eUz-0Y-XAI" firstAttribute="top" secondItem="gd2-Ad-jQc" secondAttribute="bottom" constant="8" id="JJA-7N-hRK"/>
+                                    <constraint firstItem="Dot-FF-WDZ" firstAttribute="top" secondItem="eUz-0Y-XAI" secondAttribute="bottom" constant="8" id="UFl-Uk-uy5"/>
+                                    <constraint firstItem="CFm-vb-7xe" firstAttribute="top" secondItem="uyL-HW-fcB" secondAttribute="top" constant="10" id="VLD-r9-KM4"/>
+                                    <constraint firstAttribute="centerX" secondItem="eUz-0Y-XAI" secondAttribute="centerX" id="mwV-hC-fC4"/>
+                                    <constraint firstAttribute="centerX" secondItem="CFm-vb-7xe" secondAttribute="centerX" id="tnr-aj-xmE"/>
+                                    <constraint firstItem="gd2-Ad-jQc" firstAttribute="top" secondItem="sDV-pZ-snT" secondAttribute="bottom" constant="10" id="uuW-HS-ryr"/>
+                                    <constraint firstItem="sDV-pZ-snT" firstAttribute="top" secondItem="CFm-vb-7xe" secondAttribute="bottom" constant="10" id="wga-CJ-dWH"/>
+                                </constraints>
+                                <size key="customSize" width="157" height="380"/>
                                 <connections>
                                     <outlet property="imageView" destination="sDV-pZ-snT" id="eOe-wP-ahN"/>
                                     <outlet property="rank" destination="CFm-vb-7xe" id="Bhd-c8-gAV"/>
@@ -55,34 +108,32 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="v9K-ge-xwr">
-                            <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 250 Movies on the IMDb Charts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6k-7H-UUN">
-                                    <rect key="frame" x="238" y="14" width="293" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="21" id="R4u-ba-rsh"/>
-                                        <constraint firstAttribute="width" constant="293" id="T4r-1s-ZQD"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="centerY" secondItem="A6k-7H-UUN" secondAttribute="centerY" id="4zC-QH-jG6"/>
-                                <constraint firstAttribute="centerX" secondItem="A6k-7H-UUN" secondAttribute="centerX" id="AoW-3L-He9"/>
-                            </constraints>
-                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="cST-te-hds" id="mie-nf-A4s"/>
                             <outlet property="delegate" destination="cST-te-hds" id="8YA-3T-7re"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Top 250 Movies on the IMDb Charts" id="XQh-nV-gS5"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lP-kI-qKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="-212"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gmd-S1-Jo3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kDs-BK-nuc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tMr-nm-8xT">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cST-te-hds" kind="relationship" relationship="rootViewController" id="7zY-Fc-AcK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2p-CP-qPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-165" y="-212"/>
         </scene>

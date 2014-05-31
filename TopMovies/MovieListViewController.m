@@ -7,7 +7,7 @@
 //
 
 #import "MovieListViewController.h"
-#import <AFHTTPRequestOperation.h>
+#import "UIImageView+AFNetworking.h"
 #import "ImdbApiClient.h"
 #import "Movie.h"
 #import "MovieCell.h"
@@ -66,13 +66,30 @@
 {
     MovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCell" forIndexPath:indexPath];
     Movie *movie = [self.movies objectAtIndex:indexPath.row];
-    cell.rank.text = [NSString stringWithFormat:@"#%d", indexPath.row + 1];
-    
-    
+    cell.rank.text = [NSString stringWithFormat:@"IMDb rank: %d", indexPath.row + 1];
     cell.title.text = [NSString stringWithFormat:@"%@ (%@)", movie.title, movie.year];
     [cell.title sizeToFit];
     
-    cell.imageView.image = movie.image.image;
+    if (!movie.image.image) {
+        NSURL *url = [NSURL URLWithString:movie.image.url];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [cell.imageView setImageWithURLRequest:request
+                              placeholderImage:[UIImage imageNamed:@"placeholder"]
+                                       success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                           if (image) {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   Movie *movie = [self.movies objectAtIndex:indexPath.row];
+                                                   movie.image.image = image;
+                                                   MovieCell *updateCell = (id)[collectionView cellForItemAtIndexPath:indexPath];
+                                                   if (updateCell) {
+                                                       updateCell.imageView.image = image;
+                                                   }
+                                               });
+                                           }
+                                       } failure:nil];
+    } else {
+        cell.imageView.image = movie.image.image;
+    }
     return cell;
 }
 
