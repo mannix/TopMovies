@@ -7,6 +7,7 @@
 //
 
 #import "MovieImage.h"
+#import "UIImage+Helpers.h"
 
 @implementation MovieImage
 
@@ -18,18 +19,12 @@
         self.url = [dict objectForKey:@"url"];
         self.width = [dict objectForKey:@"width"];
         self.height = [dict objectForKey:@"height"];
+        [UIImage loadFromURL:[NSURL URLWithString:self.url] callback:^(UIImage *image) {
+            self.image = image;
+        }];
     }
     
     return self;
-}
-
-- (UIImage *)image
-{
-    if (!_image) {
-        NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.url]];
-        _image = [UIImage imageWithData:imageData];
-    }
-    return _image;
 }
 
 @end
