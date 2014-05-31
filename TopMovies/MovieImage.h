@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSNumber *width;
 @property (nonatomic, strong) NSNumber *height;
+@property (nonatomic, strong) UIImage *image;
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 

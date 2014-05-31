@@ -67,7 +67,8 @@
     MovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCell" forIndexPath:indexPath];
     Movie *movie = [self.movies objectAtIndex:indexPath.row];
     cell.rank.text = [NSString stringWithFormat:@"#%d", indexPath.row + 1];
-    cell.title.text = movie.title;
+    cell.title.text = [NSString stringWithFormat:@"%@ (%@)", movie.title, movie.year];
+    cell.imageView.image = movie.image.image;
     return cell;
 }
 

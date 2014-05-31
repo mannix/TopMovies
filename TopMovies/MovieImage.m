@@ -23,4 +23,13 @@
     return self;
 }
 
+- (UIImage *)image
+{
+    if (!_image) {
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.url]];
+        _image = [UIImage imageWithData:imageData];
+    }
+    return _image;
+}
+
 @end

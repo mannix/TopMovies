@@ -40,6 +40,7 @@ static NSString * const BaseUrl = @"http://app.imdb.com/chart/top?api=v1&appid=i
                                                            delegate:nil
                                                   cancelButtonTitle:@"That stinks"
                                                   otherButtonTitles:nil];
+        NSLog(@"Error retriving IMDb movies: %@", error);
         [alertView show];
     }];
     

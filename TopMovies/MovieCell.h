@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *rank;
 @property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
