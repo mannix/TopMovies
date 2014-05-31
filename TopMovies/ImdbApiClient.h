@@ -10,6 +10,6 @@
 
 @interface ImdbApiClient : NSObject
 
-- (void)topMovies:(NSMutableArray *)movies;
+- (void)topMoviesWithCompletionBlock:(void (^)(NSArray *movies))block;
 
 @end

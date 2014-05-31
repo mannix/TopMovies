@@ -9,11 +9,13 @@
 #import "MovieListViewController.h"
 #import <AFHTTPRequestOperation.h>
 #import "ImdbApiClient.h"
+#import "Movie.h"
+#import "MovieCell.h"
 
 @interface MovieListViewController ()
 
 @property (nonatomic, strong) ImdbApiClient *imdbClient;
-@property (nonatomic, strong) NSMutableArray *movies;
+@property (nonatomic, strong) NSArray *movies;
 
 @end
 
@@ -22,26 +24,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.imdbClient = [[ImdbApiClient alloc] init];
     self.movies = [[NSMutableArray alloc] init];
-    [self.imdbClient topMovies:self.movies];
+    
+    [self.imdbClient topMoviesWithCompletionBlock:^(NSArray *movies) {
+        self.movies = movies;
+        [self.collectionView reloadData];
+    }];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Collection View Datasource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return [self.movies count];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    MovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCell" forIndexPath:indexPath];
+    Movie *movie = [self.movies objectAtIndex:indexPath.row];
+    cell.title.text = movie.title;
+    return cell;
 }
-*/
 
 @end

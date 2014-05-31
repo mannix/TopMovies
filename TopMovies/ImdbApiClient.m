@@ -14,7 +14,7 @@
 
 static NSString * const BaseUrl = @"http://app.imdb.com/chart/top?api=v1&appid=iphone1&locale=en_US";
 
-- (void)topMovies:(NSMutableArray *)movies
+- (void)topMoviesWithCompletionBlock:(void (^)(NSArray *))block
 {
     NSString *string = BaseUrl;
     NSURL *url = [NSURL URLWithString:string];
@@ -24,12 +24,15 @@ static NSString * const BaseUrl = @"http://app.imdb.com/chart/top?api=v1&appid=i
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *responseRoot = (NSDictionary *)responseObject;
-        NSDictionary *responseData = [responseRoot objectForKey:@"data"];
-        NSDictionary *responseList = [responseData objectForKey:@"list"];
-        NSArray *responseMovies = [responseList objectForKey:@"list"];
+        NSArray *responseMovies = [self moviesFromResponse:responseObject];
+        
+        NSMutableArray *movies = [[NSMutableArray alloc] init];
         for (id responseMovie in responseMovies) {
             [movies addObject:[[Movie alloc] initWithDictionary:responseMovie]];
+        }
+        
+        if (block) {
+            block([NSArray arrayWithArray:movies]);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Unable to retrieve IMDB top movies"
@@ -41,6 +44,14 @@ static NSString * const BaseUrl = @"http://app.imdb.com/chart/top?api=v1&appid=i
     }];
     
     [operation start];
+}
+
+- (NSArray *)moviesFromResponse:(id)responseObject
+{
+    NSDictionary *responseRoot = (NSDictionary *)responseObject;
+    NSDictionary *responseData = [responseRoot objectForKey:@"data"];
+    NSDictionary *responseList = [responseData objectForKey:@"list"];
+    return [responseList objectForKey:@"list"];
 }
 
 @end

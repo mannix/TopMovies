@@ -11,6 +11,7 @@
 		B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41B1939584900BCD315 /* ImdbApiClient.m */; };
 		B7F4F420193960C600BCD315 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41F193960C600BCD315 /* Movie.m */; };
 		B7F4F4231939631800BCD315 /* MovieImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F4221939631800BCD315 /* MovieImage.m */; };
+		B7F4F42719396A4000BCD315 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F42619396A4000BCD315 /* MovieCell.m */; };
 		B7F9D8D4193946510036822C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F9D8D3193946510036822C /* Foundation.framework */; };
 		B7F9D8D6193946510036822C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F9D8D5193946510036822C /* CoreGraphics.framework */; };
 		B7F9D8D8193946510036822C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F9D8D7193946510036822C /* UIKit.framework */; };
@@ -48,6 +49,8 @@
 		B7F4F41F193960C600BCD315 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		B7F4F4211939631800BCD315 /* MovieImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieImage.h; sourceTree = "<group>"; };
 		B7F4F4221939631800BCD315 /* MovieImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieImage.m; sourceTree = "<group>"; };
+		B7F4F42519396A4000BCD315 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		B7F4F42619396A4000BCD315 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		B7F9D8D0193946510036822C /* TopMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F9D8D3193946510036822C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7F9D8D5193946510036822C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		B7F4F42419396A1B00BCD315 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7F4F42519396A4000BCD315 /* MovieCell.h */,
+				B7F4F42619396A4000BCD315 /* MovieCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		B7F9D8C7193946510036822C = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +176,7 @@
 				B7F9D953193951080036822C /* MovieListViewController.h */,
 				B7F9D954193951080036822C /* MovieListViewController.m */,
 				B7F4F41D193960B000BCD315 /* Models */,
+				B7F4F42419396A1B00BCD315 /* Views */,
 				B7F4F4191939540C00BCD315 /* IMDB */,
 				B7F9D8E7193946510036822C /* TopMovies.xcdatamodeld */,
 				B7F9D8EA193946510036822C /* Images.xcassets */,
@@ -340,6 +353,7 @@
 				B7F9D8E9193946510036822C /* TopMovies.xcdatamodeld in Sources */,
 				B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */,
 				B7F9D8E2193946510036822C /* main.m in Sources */,
+				B7F4F42719396A4000BCD315 /* MovieCell.m in Sources */,
 				B7F9D955193951080036822C /* MovieListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
