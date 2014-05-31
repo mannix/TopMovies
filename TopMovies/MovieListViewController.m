@@ -7,26 +7,24 @@
 //
 
 #import "MovieListViewController.h"
+#import <AFHTTPRequestOperation.h>
+#import "ImdbApiClient.h"
 
 @interface MovieListViewController ()
+
+@property (nonatomic, strong) ImdbApiClient *imdbClient;
+@property (nonatomic, strong) NSMutableArray *movies;
 
 @end
 
 @implementation MovieListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.imdbClient = [[ImdbApiClient alloc] init];
+    self.movies = [[NSMutableArray alloc] init];
+    [self.imdbClient topMovies:self.movies];
 }
 
 - (void)didReceiveMemoryWarning

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>81A84F23-B521-45A7-92C4-CAD18FCBA8FC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TopMovies</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7751B92A-9547-4EE9-85BB-7D7833ED0F68</key>
+		<string>https://github.com/mannix/TopMovies.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TopMovies.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7751B92A-9547-4EE9-85BB-7D7833ED0F68</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mannix/TopMovies.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7751B92A-9547-4EE9-85BB-7D7833ED0F68</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7751B92A-9547-4EE9-85BB-7D7833ED0F68</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TopMovies</string>
+		</dict>
+	</array>
+</dict>
+</plist>
