@@ -24,4 +24,8 @@
     [self.delegate showDetailsForMovie:self.movie];
 }
 
+- (IBAction)rentBuyButtonTapped:(id)sender {
+    [self.delegate buyOrRentMovie:self.movie];
+}
+
 @end

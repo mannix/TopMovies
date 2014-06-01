@@ -12,12 +12,11 @@
 
 @implementation ImdbApiClient
 
-static NSString * const BaseUrl = @"http://app.imdb.com/chart/top?api=v1&appid=iphone1&locale=en_US";
+static NSString * const TopMoviesURL = @"http://app.imdb.com/chart/top?api=v1&appid=iphone1&locale=en_US";
 
 - (void)topMoviesWithCompletionBlock:(void (^)(NSArray *))block
 {
-    NSString *string = BaseUrl;
-    NSURL *url = [NSURL URLWithString:string];
+    NSURL *url = [NSURL URLWithString:TopMoviesURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];

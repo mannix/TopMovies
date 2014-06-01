@@ -11,6 +11,7 @@
 
 @protocol MovieDetails
 
+- (void)buyOrRentMovie:(Movie *)movie;
 - (void)showDetailsForMovie:(Movie *)movie;
 
 @end

@@ -9,6 +9,7 @@
 #import "MovieListViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "ImdbApiClient.h"
+#import "ITunesApiClient.h"
 #import "Movie.h"
 #import "MovieCell.h"
 #import "MovieListPhoneFlowLayout.h"
@@ -19,6 +20,7 @@
 @interface MovieListViewController ()
 
 @property (nonatomic, strong) ImdbApiClient *imdbClient;
+@property (nonatomic, strong) ITunesApiClient *iTunesClient;
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIViewController *webViewController;
 
@@ -31,6 +33,7 @@
     [super viewDidLoad];
     
     self.imdbClient = [[ImdbApiClient alloc] init];
+    self.iTunesClient = [[ITunesApiClient alloc] init];
     self.movies = [[NSMutableArray alloc] init];
     
     [self.imdbClient topMoviesWithCompletionBlock:^(NSArray *movies) {
@@ -100,6 +103,11 @@
 }
 
 #pragma mark - MovieCell Protocol
+
+- (void)buyOrRentMovie:(Movie *)movie
+{
+    [self.iTunesClient goToMovieInITunesIfAvailable:movie];
+}
 
 - (void)showDetailsForMovie:(Movie *)movie
 {

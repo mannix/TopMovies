@@ -10,6 +10,7 @@
 		1B21FE337DB5446AB0B8696D /* libPods-TopMovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D84448DC664644B8870953 /* libPods-TopMovies.a */; };
 		B7F02DAF193A597500E722E6 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F02DAE193A597500E722E6 /* MovieDetailViewController.m */; };
 		B7F02DB1193A599900E722E6 /* MovieDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F02DB0193A599900E722E6 /* MovieDetailView.xib */; };
+		B7F02DB5193B520900E722E6 /* ITunesApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F02DB4193B520900E722E6 /* ITunesApiClient.m */; };
 		B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41B1939584900BCD315 /* ImdbApiClient.m */; };
 		B7F4F420193960C600BCD315 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41F193960C600BCD315 /* Movie.m */; };
 		B7F4F4231939631800BCD315 /* MovieImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F4221939631800BCD315 /* MovieImage.m */; };
@@ -50,6 +51,8 @@
 		B7F02DAD193A597500E722E6 /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
 		B7F02DAE193A597500E722E6 /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
 		B7F02DB0193A599900E722E6 /* MovieDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailView.xib; sourceTree = "<group>"; };
+		B7F02DB3193B520900E722E6 /* ITunesApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITunesApiClient.h; sourceTree = "<group>"; };
+		B7F02DB4193B520900E722E6 /* ITunesApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesApiClient.m; sourceTree = "<group>"; };
 		B7F4F41A1939584900BCD315 /* ImdbApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImdbApiClient.h; sourceTree = "<group>"; };
 		B7F4F41B1939584900BCD315 /* ImdbApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImdbApiClient.m; sourceTree = "<group>"; };
 		B7F4F41E193960C600BCD315 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
@@ -130,6 +133,15 @@
 				B7F02DB0193A599900E722E6 /* MovieDetailView.xib */,
 			);
 			name = "Movie Details";
+			sourceTree = "<group>";
+		};
+		B7F02DB2193B4ED700E722E6 /* iTunes */ = {
+			isa = PBXGroup;
+			children = (
+				B7F02DB3193B520900E722E6 /* ITunesApiClient.h */,
+				B7F02DB4193B520900E722E6 /* ITunesApiClient.m */,
+			);
+			name = iTunes;
 			sourceTree = "<group>";
 		};
 		B7F4F4191939540C00BCD315 /* IMDb */ = {
@@ -219,6 +231,7 @@
 				B7F4F41D193960B000BCD315 /* Models */,
 				B7F4F42419396A1B00BCD315 /* Views */,
 				B7F4F4191939540C00BCD315 /* IMDb */,
+				B7F02DB2193B4ED700E722E6 /* iTunes */,
 				B7F02DA8193A00CD00E722E6 /* Helpers */,
 				B7F9D8EA193946510036822C /* Images.xcassets */,
 				B7F9D8E7193946510036822C /* TopMovies.xcdatamodeld */,
@@ -391,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7F4F420193960C600BCD315 /* Movie.m in Sources */,
+				B7F02DB5193B520900E722E6 /* ITunesApiClient.m in Sources */,
 				B7F4F42E1939743900BCD315 /* MovieListPhoneFlowLayout.m in Sources */,
 				B7F9D8E6193946510036822C /* MMAppDelegate.m in Sources */,
 				B7F02DAF193A597500E722E6 /* MovieDetailViewController.m in Sources */,
