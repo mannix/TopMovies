@@ -219,9 +219,9 @@
 				B7F4F41D193960B000BCD315 /* Models */,
 				B7F4F42419396A1B00BCD315 /* Views */,
 				B7F4F4191939540C00BCD315 /* IMDb */,
-				B7F9D8E7193946510036822C /* TopMovies.xcdatamodeld */,
 				B7F02DA8193A00CD00E722E6 /* Helpers */,
 				B7F9D8EA193946510036822C /* Images.xcassets */,
+				B7F9D8E7193946510036822C /* TopMovies.xcdatamodeld */,
 				B7F9D8DC193946510036822C /* Supporting Files */,
 			);
 			path = TopMovies;
