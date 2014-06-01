@@ -13,11 +13,13 @@
 #import "MovieCell.h"
 #import "MovieListPhoneFlowLayout.h"
 #import "MovieListTabletFlowLayout.h"
+#import "MovieDetailViewController.h"
 
 @interface MovieListViewController ()
 
 @property (nonatomic, strong) ImdbApiClient *imdbClient;
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) UIViewController *webViewController;
 
 @end
 
@@ -66,6 +68,8 @@
 {
     MovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCell" forIndexPath:indexPath];
     Movie *movie = [self.movies objectAtIndex:indexPath.row];
+    cell.delegate = self;
+    cell.movie = movie;
     cell.rank.text = [NSString stringWithFormat:@"IMDb rank: %d", indexPath.row + 1];
     cell.title.text = [NSString stringWithFormat:@"%@ (%@)", movie.title, movie.year];
     [cell.title sizeToFit];
@@ -91,6 +95,21 @@
         cell.imageView.image = movie.image.image;
     }
     return cell;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+#pragma mark - MovieCell Protocol
+
+- (void)showDetailsForMovie:(Movie *)movie
+{
+    MovieDetailViewController *viewController = [[MovieDetailViewController alloc] initWithNibName:@"MovieDetailView" bundle:nil];
+    viewController.url = [NSString stringWithFormat:@"http://www.imdb.com/title/%@", movie.tconst];
+    viewController.movieTitle = movie.title;
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 @end

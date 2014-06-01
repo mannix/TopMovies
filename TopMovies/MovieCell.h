@@ -7,11 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
+
+@protocol MovieDetails
+
+- (void)showDetailsForMovie:(Movie *)movie;
+
+@end
 
 @interface MovieCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *rank;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) Movie *movie;
+
+
+@property (retain) id delegate;
 
 @end

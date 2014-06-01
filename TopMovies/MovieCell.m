@@ -10,4 +10,8 @@
 
 @implementation MovieCell
 
+- (IBAction)viewMoreButtonTapped:(id)sender {
+    [self.delegate showDetailsForMovie:self.movie];
+}
+
 @end

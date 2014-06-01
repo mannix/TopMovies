@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B21FE337DB5446AB0B8696D /* libPods-TopMovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D84448DC664644B8870953 /* libPods-TopMovies.a */; };
+		B7F02DAF193A597500E722E6 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F02DAE193A597500E722E6 /* MovieDetailViewController.m */; };
+		B7F02DB1193A599900E722E6 /* MovieDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F02DB0193A599900E722E6 /* MovieDetailView.xib */; };
 		B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41B1939584900BCD315 /* ImdbApiClient.m */; };
 		B7F4F420193960C600BCD315 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41F193960C600BCD315 /* Movie.m */; };
 		B7F4F4231939631800BCD315 /* MovieImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F4221939631800BCD315 /* MovieImage.m */; };
@@ -45,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7F02DAD193A597500E722E6 /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
+		B7F02DAE193A597500E722E6 /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
+		B7F02DB0193A599900E722E6 /* MovieDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailView.xib; sourceTree = "<group>"; };
 		B7F4F41A1939584900BCD315 /* ImdbApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImdbApiClient.h; sourceTree = "<group>"; };
 		B7F4F41B1939584900BCD315 /* ImdbApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImdbApiClient.m; sourceTree = "<group>"; };
 		B7F4F41E193960C600BCD315 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
@@ -115,6 +120,16 @@
 			children = (
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B7F02DAC193A594200E722E6 /* Movie Details */ = {
+			isa = PBXGroup;
+			children = (
+				B7F02DAD193A597500E722E6 /* MovieDetailViewController.h */,
+				B7F02DAE193A597500E722E6 /* MovieDetailViewController.m */,
+				B7F02DB0193A599900E722E6 /* MovieDetailView.xib */,
+			);
+			name = "Movie Details";
 			sourceTree = "<group>";
 		};
 		B7F4F4191939540C00BCD315 /* IMDb */ = {
@@ -200,6 +215,7 @@
 				B7F9D94C19394EFB0036822C /* Main_iPad.storyboard */,
 				B7F9D94E19394F0C0036822C /* Main_iPhone.storyboard */,
 				B7F4F428193973DE00BCD315 /* Movie List */,
+				B7F02DAC193A594200E722E6 /* Movie Details */,
 				B7F4F41D193960B000BCD315 /* Models */,
 				B7F4F42419396A1B00BCD315 /* Views */,
 				B7F4F4191939540C00BCD315 /* IMDb */,
@@ -321,6 +337,7 @@
 				B7F9D94F19394F0C0036822C /* Main_iPhone.storyboard in Resources */,
 				B7F9D94D19394EFB0036822C /* Main_iPad.storyboard in Resources */,
 				B7F9D8E0193946510036822C /* InfoPlist.strings in Resources */,
+				B7F02DB1193A599900E722E6 /* MovieDetailView.xib in Resources */,
 				B7F9D8EB193946510036822C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +393,7 @@
 				B7F4F420193960C600BCD315 /* Movie.m in Sources */,
 				B7F4F42E1939743900BCD315 /* MovieListPhoneFlowLayout.m in Sources */,
 				B7F9D8E6193946510036822C /* MMAppDelegate.m in Sources */,
+				B7F02DAF193A597500E722E6 /* MovieDetailViewController.m in Sources */,
 				B7F4F4231939631800BCD315 /* MovieImage.m in Sources */,
 				B7F9D8E9193946510036822C /* TopMovies.xcdatamodeld in Sources */,
 				B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */,

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieCell.h"
 
-@interface MovieListViewController : UICollectionViewController
+@interface MovieListViewController : UICollectionViewController<MovieDetails>
 
 @end
