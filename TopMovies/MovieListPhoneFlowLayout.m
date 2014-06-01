@@ -10,4 +10,16 @@
 
 @implementation MovieListPhoneFlowLayout
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.itemSize = CGSizeMake(274, 248);
+        self.scrollDirection = UICollectionViewScrollDirectionVertical;
+        self.sectionInset = UIEdgeInsetsMake(5, 2, 5, 2);
+    }
+    
+    return self;
+}
+
 @end

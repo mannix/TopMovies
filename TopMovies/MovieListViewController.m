@@ -67,7 +67,7 @@
     cell.buyRentButton.layer.cornerRadius = 4;
     cell.buyRentButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     cell.movie = movie;
-    cell.rank.text = [NSString stringWithFormat:@"#%ld", indexPath.row + 1];
+    cell.rank.text = [NSString stringWithFormat:@"#%d", indexPath.row + 1];
     cell.title.text = [NSString stringWithFormat:@"%@ (%@)", movie.title, movie.year];
     [cell.title sizeToFit];
     
