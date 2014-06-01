@@ -14,6 +14,7 @@
 #import "MovieListPhoneFlowLayout.h"
 #import "MovieListTabletFlowLayout.h"
 #import "MovieDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MovieListViewController ()
 
@@ -44,6 +45,7 @@
         flowLayout = [[MovieListPhoneFlowLayout alloc] init];
     }
     [self.collectionView setCollectionViewLayout:flowLayout];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 #pragma mark - Collection View Datasource
@@ -53,24 +55,16 @@
     return [self.movies count];
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionReusableView *view = nil;
-    
-    if (kind == UICollectionElementKindSectionHeader) {
-        view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-    }
-    
-    return view;
-}
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCell" forIndexPath:indexPath];
     Movie *movie = [self.movies objectAtIndex:indexPath.row];
     cell.delegate = self;
+    cell.buyRentButton.layer.borderWidth = 1;
+    cell.buyRentButton.layer.cornerRadius = 4;
+    cell.buyRentButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     cell.movie = movie;
-    cell.rank.text = [NSString stringWithFormat:@"IMDb rank: %d", indexPath.row + 1];
+    cell.rank.text = [NSString stringWithFormat:@"#%ld", indexPath.row + 1];
     cell.title.text = [NSString stringWithFormat:@"%@ (%@)", movie.title, movie.year];
     [cell.title sizeToFit];
     
@@ -97,9 +91,12 @@
     return cell;
 }
 
-- (BOOL)shouldAutorotate
+#pragma mark - Collection View Delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    Movie *selectedMovie = [self.movies objectAtIndex:indexPath.row];
+    [self showDetailsForMovie:selectedMovie];
 }
 
 #pragma mark - MovieCell Protocol

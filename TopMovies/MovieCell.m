@@ -10,6 +10,16 @@
 
 @implementation MovieCell
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.buyRentButton.layer.cornerRadius = 2;
+        self.buyRentButton.layer.borderWidth = 1;
+        self.buyRentButton.layer.borderColor = (__bridge CGColorRef)([UIColor lightGrayColor]);
+    }
+    return self;
+}
 - (IBAction)viewMoreButtonTapped:(id)sender {
     [self.delegate showDetailsForMovie:self.movie];
 }

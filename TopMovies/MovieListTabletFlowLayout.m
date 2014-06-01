@@ -14,9 +14,9 @@
 {
     self = [super init];
     if (self) {
-        self.itemSize = CGSizeMake(157, 380);
+        self.itemSize = CGSizeMake(123, 333);
         self.scrollDirection = UICollectionViewScrollDirectionVertical;
-        self.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+        self.sectionInset = UIEdgeInsetsMake(5, 2, 5, 2);
     }
     
     return self;
