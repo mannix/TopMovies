@@ -7,7 +7,6 @@
 //
 
 #import "Movie.h"
-#import "MovieImage.h"
 
 @implementation Movie
 
@@ -16,12 +15,14 @@
     self = [self init];
     
     if (self) {
-        self.numVotes = [dict objectForKey:@"num_voties"];
-        self.tconst = [dict objectForKey:@"tconst"];
         self.title = [dict objectForKey:@"title"];
-        self.rating = [dict objectForKey:@"rating"];
-        self.image = [[MovieImage alloc] initWithDictionary:[dict objectForKey:@"image"]];
         self.year = [dict objectForKey:@"year"];
+        self.tconst = [dict objectForKey:@"tconst"];
+        
+        NSDictionary *imageDictionary = [dict objectForKey:@"image"];
+        self.imageUrl = [imageDictionary objectForKey:@"url"];
+        self.imageWidth = [imageDictionary objectForKey:@"width"];
+        self.imageHeight = [imageDictionary objectForKey:@"height"];
     }
     
     return self;

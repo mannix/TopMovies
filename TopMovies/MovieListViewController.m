@@ -71,8 +71,8 @@
     cell.title.text = [NSString stringWithFormat:@"%@ (%@)", movie.title, movie.year];
     [cell.title sizeToFit];
     
-    if (!movie.image.image) {
-        NSURL *url = [NSURL URLWithString:movie.image.url];
+    if (!movie.image) {
+        NSURL *url = [NSURL URLWithString:movie.imageUrl];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [cell.imageView setImageWithURLRequest:request
                               placeholderImage:[UIImage imageNamed:@"placeholder"]
@@ -80,7 +80,7 @@
                                            if (image) {
                                                dispatch_async(dispatch_get_main_queue(), ^{
                                                    Movie *movie = [self.movies objectAtIndex:indexPath.row];
-                                                   movie.image.image = image;
+                                                   movie.image = image;
                                                    MovieCell *updateCell = (id)[collectionView cellForItemAtIndexPath:indexPath];
                                                    if (updateCell) {
                                                        updateCell.imageView.image = image;
@@ -89,7 +89,7 @@
                                            }
                                        } failure:nil];
     } else {
-        cell.imageView.image = movie.image.image;
+        cell.imageView.image = movie.image;
     }
     return cell;
 }

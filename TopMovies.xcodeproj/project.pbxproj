@@ -13,7 +13,6 @@
 		B7F02DB5193B520900E722E6 /* ITunesApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F02DB4193B520900E722E6 /* ITunesApiClient.m */; };
 		B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41B1939584900BCD315 /* ImdbApiClient.m */; };
 		B7F4F420193960C600BCD315 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F41F193960C600BCD315 /* Movie.m */; };
-		B7F4F4231939631800BCD315 /* MovieImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F4221939631800BCD315 /* MovieImage.m */; };
 		B7F4F42719396A4000BCD315 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F42619396A4000BCD315 /* MovieCell.m */; };
 		B7F4F42B1939742700BCD315 /* MovieListTabletFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F42A1939742700BCD315 /* MovieListTabletFlowLayout.m */; };
 		B7F4F42E1939743900BCD315 /* MovieListPhoneFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F4F42D1939743900BCD315 /* MovieListPhoneFlowLayout.m */; };
@@ -57,8 +56,6 @@
 		B7F4F41B1939584900BCD315 /* ImdbApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImdbApiClient.m; sourceTree = "<group>"; };
 		B7F4F41E193960C600BCD315 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		B7F4F41F193960C600BCD315 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
-		B7F4F4211939631800BCD315 /* MovieImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieImage.h; sourceTree = "<group>"; };
-		B7F4F4221939631800BCD315 /* MovieImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieImage.m; sourceTree = "<group>"; };
 		B7F4F42519396A4000BCD315 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		B7F4F42619396A4000BCD315 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		B7F4F4291939742700BCD315 /* MovieListTabletFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListTabletFlowLayout.h; sourceTree = "<group>"; };
@@ -158,8 +155,6 @@
 			children = (
 				B7F4F41E193960C600BCD315 /* Movie.h */,
 				B7F4F41F193960C600BCD315 /* Movie.m */,
-				B7F4F4211939631800BCD315 /* MovieImage.h */,
-				B7F4F4221939631800BCD315 /* MovieImage.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -408,7 +403,6 @@
 				B7F4F42E1939743900BCD315 /* MovieListPhoneFlowLayout.m in Sources */,
 				B7F9D8E6193946510036822C /* MMAppDelegate.m in Sources */,
 				B7F02DAF193A597500E722E6 /* MovieDetailViewController.m in Sources */,
-				B7F4F4231939631800BCD315 /* MovieImage.m in Sources */,
 				B7F9D8E9193946510036822C /* TopMovies.xcdatamodeld in Sources */,
 				B7F4F41C1939584900BCD315 /* ImdbApiClient.m in Sources */,
 				B7F9D8E2193946510036822C /* main.m in Sources */,

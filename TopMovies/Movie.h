@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MovieImage.h"
 
 @interface Movie : NSObject
 
-@property (nonatomic, strong) NSNumber *numVotes;
 @property (nonatomic, strong) NSString *tconst;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, strong) NSString *year;
-@property (nonatomic, strong) MovieImage *image;
+@property (nonatomic, strong) NSString *imageUrl;
+@property (nonatomic, strong) NSNumber *imageWidth;
+@property (nonatomic, strong) NSNumber *imageHeight;
+@property (nonatomic, strong) UIImage *image;
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 
