@@ -55,7 +55,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1U-dA-b9w">
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1U-dA-b9w">
                                             <rect key="frame" x="154" y="188" width="92" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -67,6 +67,16 @@
                                                 <action selector="rentBuyButtonTapped:" destination="WXh-0k-4EZ" eventType="touchUpInside" id="RwZ-u7-mDd"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching iTunes..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoc-ch-9S3">
+                                            <rect key="frame" x="143" y="192" width="123" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="yfK-Oy-jaC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -74,6 +84,8 @@
                                 <constraints>
                                     <constraint firstItem="khR-Rp-qQG" firstAttribute="top" secondItem="WXh-0k-4EZ" secondAttribute="top" constant="20" id="7Yx-G8-7fL"/>
                                     <constraint firstAttribute="trailing" secondItem="vHg-Ks-JgC" secondAttribute="trailing" constant="16" id="9Sa-g9-WjT"/>
+                                    <constraint firstAttribute="trailing" secondItem="aoc-ch-9S3" secondAttribute="trailing" constant="8" id="TfI-sg-qXu"/>
+                                    <constraint firstAttribute="bottom" secondItem="aoc-ch-9S3" secondAttribute="bottom" constant="35" id="Tn7-XA-QVh"/>
                                     <constraint firstItem="yz7-pU-e8v" firstAttribute="top" secondItem="khR-Rp-qQG" secondAttribute="bottom" constant="8" id="Ujj-IA-8js"/>
                                     <constraint firstAttribute="trailing" secondItem="z1U-dA-b9w" secondAttribute="trailing" constant="28" id="WL9-zr-O5i"/>
                                     <constraint firstItem="vHg-Ks-JgC" firstAttribute="leading" secondItem="yz7-pU-e8v" secondAttribute="trailing" constant="8" id="ghn-vu-8np"/>
@@ -81,10 +93,12 @@
                                     <constraint firstItem="khR-Rp-qQG" firstAttribute="leading" secondItem="WXh-0k-4EZ" secondAttribute="leading" constant="20" id="kcn-1T-em4"/>
                                     <constraint firstItem="vHg-Ks-JgC" firstAttribute="top" secondItem="yz7-pU-e8v" secondAttribute="top" id="mVu-Xs-xON"/>
                                     <constraint firstItem="z1U-dA-b9w" firstAttribute="bottom" secondItem="yz7-pU-e8v" secondAttribute="bottom" constant="-2" id="nKQ-Fp-HRY"/>
+                                    <constraint firstItem="aoc-ch-9S3" firstAttribute="leading" secondItem="yz7-pU-e8v" secondAttribute="trailing" constant="8" id="smO-DG-c7g"/>
                                     <constraint firstItem="z1U-dA-b9w" firstAttribute="leading" secondItem="yz7-pU-e8v" secondAttribute="trailing" constant="19" id="tpI-An-blO"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="buyRentButton" destination="z1U-dA-b9w" id="yKQ-N4-gK5"/>
+                                    <outlet property="iTunesStatusLabel" destination="aoc-ch-9S3" id="9on-fB-GNI"/>
                                     <outlet property="imageView" destination="yz7-pU-e8v" id="oWQ-TA-Af0"/>
                                     <outlet property="rank" destination="khR-Rp-qQG" id="6x0-7U-mm1"/>
                                     <outlet property="title" destination="vHg-Ks-JgC" id="rsl-aB-BTb"/>

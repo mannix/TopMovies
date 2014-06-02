@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * year;
 @property (nonatomic, retain) NSString * imageUrl;
 @property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSString * iTunesUrl;
 
 - (void)populateWithDictionary:(NSDictionary *)dictionary;
 - (void)save;

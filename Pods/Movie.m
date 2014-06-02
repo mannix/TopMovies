@@ -16,6 +16,7 @@
 @dynamic year;
 @dynamic imageUrl;
 @dynamic image;
+@dynamic iTunesUrl;
 
 - (void)populateWithDictionary:(NSDictionary *)dictionary
 {

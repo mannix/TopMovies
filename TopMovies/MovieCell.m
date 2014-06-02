@@ -28,4 +28,11 @@
     [self.delegate buyOrRentMovie:self.movie];
 }
 
+- (void)initView
+{
+    self.buyRentButton.layer.borderWidth = 1;
+    self.buyRentButton.layer.cornerRadius = 4;
+    self.buyRentButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+}
+
 @end

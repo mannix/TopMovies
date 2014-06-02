@@ -96,15 +96,13 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCell" forIndexPath:indexPath];
-    Movie *movie = [self.movies objectAtIndex:indexPath.row];
+    [cell initView];
     cell.delegate = self;
-    cell.buyRentButton.layer.borderWidth = 1;
-    cell.buyRentButton.layer.cornerRadius = 4;
-    cell.buyRentButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+
+    Movie *movie = [self.movies objectAtIndex:indexPath.row];
     cell.movie = movie;
     cell.rank.text = [NSString stringWithFormat:@"#%d", indexPath.row + 1];
     cell.title.text = [NSString stringWithFormat:@"%@ (%@)", movie.title, movie.year];
-    [cell.title sizeToFit];
     
     if (!movie.image) {
         NSURL *url = [NSURL URLWithString:movie.imageUrl];
@@ -127,6 +125,27 @@
     } else {
         cell.imageView.image = [UIImage imageWithData:movie.image];
     }
+    
+    if (movie.iTunesUrl) {
+        cell.buyRentButton.hidden = NO;
+        cell.iTunesStatusLabel.hidden = YES;
+    } else {
+        [self.iTunesClient searchForMovie:movie withCompletionBlock:^(NSString *url) {
+            if (url) {
+                movie.iTunesUrl = url;
+                [movie save];
+                cell.buyRentButton.hidden = NO;
+                cell.iTunesStatusLabel.hidden = YES;
+            } else {
+                cell.iTunesStatusLabel.text = @"Unavailable";
+                cell.iTunesStatusLabel.hidden = NO;
+                cell.buyRentButton.hidden = YES;
+            }
+        }];
+    }
+    
+    
+    [cell.title sizeToFit];
     return cell;
 }
 
@@ -142,7 +161,7 @@
 
 - (void)buyOrRentMovie:(Movie *)movie
 {
-    [self.iTunesClient goToMovieInITunesIfAvailable:movie];
+    [self.iTunesClient openMovieInITunes:movie];
 }
 
 - (void)showDetailsForMovie:(Movie *)movie

@@ -14,32 +14,11 @@
 
 static NSString * const FindMoviesURL = @"https://itunes.apple.com/search?media=movie&entity=movie&term=%@";
 
-- (void)goToMovieInITunesIfAvailable:(Movie *)movie
-{
-    [self findMovie:movie withCompletionBlock:^(NSString *trackViewUrl) {
-        if (trackViewUrl) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:trackViewUrl]];
-        } else {
-            NSString *alertTitle = [NSString stringWithFormat:@"%@ is not available to rent or buy in iTunes", movie.title];
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
-                                                                message:nil
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"Okay"
-                                                      otherButtonTitles:nil];
-            [alertView show];
-        }
-        
-    }];
-}
-
-
-
-
-- (void)findMovie:(Movie *)movie withCompletionBlock:(void(^)(NSString *))block
+- (void)searchForMovie:(Movie *)movie withCompletionBlock:(void (^)(NSString *))block
 {
     NSString *urlString = [NSString stringWithFormat:FindMoviesURL, movie.title];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
+    
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -73,6 +52,13 @@ static NSString * const FindMoviesURL = @"https://itunes.apple.com/search?media=
     }];
     
     [operation start];
+}
+
+- (void)openMovieInITunes:(Movie *)movie
+{
+    if (movie.iTunesUrl) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:movie.iTunesUrl]];
+    }
 }
 
 @end

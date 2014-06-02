@@ -11,6 +11,7 @@
 
 @interface ITunesApiClient : NSObject
 
-- (void)goToMovieInITunesIfAvailable:(Movie *)movie;
-
+- (void)searchForMovie:movie withCompletionBlock:(void (^)(NSString *url))block;
+- (void)openMovieInITunes:(Movie *)movie;
+                                                  
 @end
