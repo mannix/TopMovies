@@ -26,8 +26,13 @@ static NSString * const TopMoviesURL = @"http://app.imdb.com/chart/top?api=v1&ap
         NSArray *responseMovies = [self moviesFromResponse:responseObject];
         
         NSMutableArray *movies = [[NSMutableArray alloc] init];
-        for (id responseMovie in responseMovies) {
-            [movies addObject:[[Movie alloc] initWithDictionary:responseMovie]];
+        for (int i = 0; i < [responseMovies count]; i++) {
+            id responseMovie = [responseMovies objectAtIndex:i];
+            Movie *movie = [Movie MR_createEntity];
+            [movie populateWithDictionary:(NSDictionary *)responseMovie];
+            movie.rank = [NSNumber numberWithInt:i + 1];
+            [movie save];
+            [movies addObject:movie];
         }
         
         if (block) {

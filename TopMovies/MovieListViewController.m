@@ -36,10 +36,16 @@
     self.iTunesClient = [[ITunesApiClient alloc] init];
     self.movies = [[NSMutableArray alloc] init];
     
-    [self.imdbClient topMoviesWithCompletionBlock:^(NSArray *movies) {
-        self.movies = movies;
-        [self.collectionView reloadData];
-    }];
+    NSArray *existingMovies = [Movie MR_findAllSortedBy:@"rank" ascending:YES];
+    
+    if (existingMovies && [existingMovies count] > 0) {
+        self.movies = existingMovies;
+    } else {
+        [self.imdbClient topMoviesWithCompletionBlock:^(NSArray *movies) {
+            self.movies = movies;
+            [self.collectionView reloadData];
+        }];
+    }
     
     UICollectionViewFlowLayout *flowLayout = nil;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -80,7 +86,8 @@
                                            if (image) {
                                                dispatch_async(dispatch_get_main_queue(), ^{
                                                    Movie *movie = [self.movies objectAtIndex:indexPath.row];
-                                                   movie.image = image;
+                                                   movie.image = UIImageJPEGRepresentation(image, 0.7);
+                                                   [movie save];
                                                    MovieCell *updateCell = (id)[collectionView cellForItemAtIndexPath:indexPath];
                                                    if (updateCell) {
                                                        updateCell.imageView.image = image;
@@ -89,7 +96,7 @@
                                            }
                                        } failure:nil];
     } else {
-        cell.imageView.image = movie.image;
+        cell.imageView.image = [UIImage imageWithData:movie.image];
     }
     return cell;
 }
