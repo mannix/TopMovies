@@ -35,11 +35,40 @@
     self.imdbClient = [[ImdbApiClient alloc] init];
     self.iTunesClient = [[ITunesApiClient alloc] init];
     
-    self.movies = [Movie MR_findAllSortedBy:@"rank" ascending:YES];
-    if (!self.movies || [self.movies count] == 0) {
-        [self loadMovies];
+    [self loadMovies];
+    [self setFlowLayout];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self setupRefreshControl];
     }
     
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+- (void)loadMovies
+{
+    self.movies = [Movie MR_findAllSortedBy:@"rank" ascending:YES];
+    if (!self.movies || [self.movies count] == 0) {
+        [self loadImdbMovies];
+    }
+}
+
+- (IBAction)refreshMovies:(id)sender {
+    [Movie MR_truncateAll];
+    [self loadImdbMovies];
+    [(UIRefreshControl *)sender endRefreshing];
+}
+
+- (void)loadImdbMovies
+{
+    [self.imdbClient topMoviesWithCompletionBlock:^(NSArray *movies) {
+        self.movies = movies;
+        [self.collectionView reloadData];
+    }];
+}
+
+- (void)setFlowLayout
+{
     UICollectionViewFlowLayout *flowLayout = nil;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         flowLayout = [[MovieListTabletFlowLayout alloc] init];
@@ -47,20 +76,14 @@
         flowLayout = [[MovieListPhoneFlowLayout alloc] init];
     }
     [self.collectionView setCollectionViewLayout:flowLayout];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
-- (IBAction)refreshMovies:(id)sender {
-    [Movie MR_truncateAll];
-    [self loadMovies];
-}
-
-- (void)loadMovies
+- (void)setupRefreshControl
 {
-    [self.imdbClient topMoviesWithCompletionBlock:^(NSArray *movies) {
-        self.movies = movies;
-        [self.collectionView reloadData];
-    }];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor grayColor];
+    [refreshControl addTarget:self action:@selector(refreshMovies:) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:refreshControl];
 }
 
 #pragma mark - Collection View Datasource

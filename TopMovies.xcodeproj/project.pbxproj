@@ -115,13 +115,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B7F02DA8193A00CD00E722E6 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
 		B7F02DAC193A594200E722E6 /* Movie Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,22 +125,15 @@
 			name = "Movie Details";
 			sourceTree = "<group>";
 		};
-		B7F02DB2193B4ED700E722E6 /* iTunes */ = {
-			isa = PBXGroup;
-			children = (
-				B7F02DB3193B520900E722E6 /* ITunesApiClient.h */,
-				B7F02DB4193B520900E722E6 /* ITunesApiClient.m */,
-			);
-			name = iTunes;
-			sourceTree = "<group>";
-		};
-		B7F4F4191939540C00BCD315 /* IMDb */ = {
+		B7F4F4191939540C00BCD315 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B7F4F41A1939584900BCD315 /* ImdbApiClient.h */,
 				B7F4F41B1939584900BCD315 /* ImdbApiClient.m */,
+				B7F02DB3193B520900E722E6 /* ITunesApiClient.h */,
+				B7F02DB4193B520900E722E6 /* ITunesApiClient.m */,
 			);
-			name = IMDb;
+			name = Services;
 			sourceTree = "<group>";
 		};
 		B7F4F41D193960B000BCD315 /* Models */ = {
@@ -225,9 +211,7 @@
 				B7F02DAC193A594200E722E6 /* Movie Details */,
 				B7F4F41D193960B000BCD315 /* Models */,
 				B7F4F42419396A1B00BCD315 /* Views */,
-				B7F4F4191939540C00BCD315 /* IMDb */,
-				B7F02DB2193B4ED700E722E6 /* iTunes */,
-				B7F02DA8193A00CD00E722E6 /* Helpers */,
+				B7F4F4191939540C00BCD315 /* Services */,
 				B7F9D8EA193946510036822C /* Images.xcassets */,
 				B7F9D8E7193946510036822C /* TopMovies.xcdatamodeld */,
 				B7F9D8DC193946510036822C /* Supporting Files */,

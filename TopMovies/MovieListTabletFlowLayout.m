@@ -16,7 +16,7 @@
     if (self) {
         self.itemSize = CGSizeMake(123, 333);
         self.scrollDirection = UICollectionViewScrollDirectionVertical;
-        self.sectionInset = UIEdgeInsetsMake(5, 2, 5, 2);
+        self.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8);
     }
     
     return self;
