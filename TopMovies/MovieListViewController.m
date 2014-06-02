@@ -34,17 +34,10 @@
     
     self.imdbClient = [[ImdbApiClient alloc] init];
     self.iTunesClient = [[ITunesApiClient alloc] init];
-    self.movies = [[NSMutableArray alloc] init];
     
-    NSArray *existingMovies = [Movie MR_findAllSortedBy:@"rank" ascending:YES];
-    
-    if (existingMovies && [existingMovies count] > 0) {
-        self.movies = existingMovies;
-    } else {
-        [self.imdbClient topMoviesWithCompletionBlock:^(NSArray *movies) {
-            self.movies = movies;
-            [self.collectionView reloadData];
-        }];
+    self.movies = [Movie MR_findAllSortedBy:@"rank" ascending:YES];
+    if (!self.movies || [self.movies count] == 0) {
+        [self loadMovies];
     }
     
     UICollectionViewFlowLayout *flowLayout = nil;
@@ -55,6 +48,19 @@
     }
     [self.collectionView setCollectionViewLayout:flowLayout];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+- (IBAction)refreshMovies:(id)sender {
+    [Movie MR_truncateAll];
+    [self loadMovies];
+}
+
+- (void)loadMovies
+{
+    [self.imdbClient topMoviesWithCompletionBlock:^(NSArray *movies) {
+        self.movies = movies;
+        [self.collectionView reloadData];
+    }];
 }
 
 #pragma mark - Collection View Datasource

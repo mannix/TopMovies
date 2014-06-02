@@ -93,7 +93,14 @@
                             <outlet property="delegate" destination="cST-te-hds" id="8YA-3T-7re"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Top 250 Movies on the IMDb Charts" id="XQh-nV-gS5"/>
+                    <navigationItem key="navigationItem" title="Top 250 Movies on the IMDb Charts" id="XQh-nV-gS5">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="Esj-mo-nGS">
+                            <color key="tintColor" red="0.95294117649999999" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="refreshMovies:" destination="cST-te-hds" id="fFg-a6-LhC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lP-kI-qKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
