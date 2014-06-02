@@ -54,7 +54,7 @@ static NSString * const FindMoviesURL = @"https://itunes.apple.com/search?media=
         for (NSDictionary *result in searchResults) {
             NSString *releaseDate = [result objectForKey:@"releaseDate"];
             NSString *releaseYear = [releaseDate substringToIndex:4];
-            if ([releaseYear isEqualToString:movie.year]) {
+            if ([releaseYear isEqualToString:movie.year] || [searchResults count] == 1  ) {
                 trackViewUrl = [result objectForKey:@"trackViewUrl"];
                 break;
             }
