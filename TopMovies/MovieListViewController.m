@@ -101,7 +101,7 @@
 
     Movie *movie = [self.movies objectAtIndex:indexPath.row];
     cell.movie = movie;
-    cell.rank.text = [NSString stringWithFormat:@"#%d", indexPath.row + 1];
+    cell.rank.text = [movie.rank stringValue];
     cell.title.text = [NSString stringWithFormat:@"%@ (%@)", movie.title, movie.year];
     
     if (!movie.image) {
