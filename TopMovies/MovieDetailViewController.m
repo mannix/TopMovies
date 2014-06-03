@@ -24,12 +24,6 @@
     [self.webView loadRequest:urlRequest];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [UIApplication sharedApplication].statusBarOrientation = self.interfaceOrientation;
-}
-
 - (IBAction)closeButtonTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
